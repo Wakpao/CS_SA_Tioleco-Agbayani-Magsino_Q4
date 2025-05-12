@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ShopAda - Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+
+  <style>
+    :root {
+      --primary-gradient: linear-gradient(90deg, #8e44ad, #3498db);
+      --accent: #2ecc71;
+      --bg: #f0f4f8;
+      --card-bg: #ffffff;
+      --text-dark: #2c3e50;
+      --border: #e0e0e0;
+      --shadow: rgba(0, 0, 0, 0.05);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text-dark);
+}
+
+
+   header {
+  background: url('https://static.vecteezy.com/system/resources/previews/024/592/862/non_2x/pink-magic-forest-with-rainbow-cartoon-landscape-free-vector.jpg') center/cover no-repeat;
+  color: white;
+  padding: 3rem 1rem;
+  text-align: center;
+  position: relative;
+}
+
+header h1 {
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+nav button {
+  background: white;
+  color: #8e44ad; 
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); ;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  margin: 0 0.5rem;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+    nav a {
+      color: #dfe6e9;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    nav button:hover {
+  background: #f3e6f9;
+  color: #6c3483; 
+}
+
+
+    main {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 2rem;
+      gap: 2rem;
+      justify-content: space-between;
+    }
+
+    #products {
+      flex: 3;
+      min-width: 60%;
+    }
+
+    .category {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: 0 4px 8px var(--shadow);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .category h3 {
+      color: #8e44ad;
+      margin-bottom: 1rem;
+    }
+
+    .item {
+      background-color: #fdfdff;
+      padding: 1rem;
+      margin: 0.5rem 0;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .item:hover {
+      background: #ecf0f1;
+      transform: scale(1.01);
+    }
+
+    #about-section {
+      align-items: center;
+    }
+
+    #cart-section {
+      flex: 1;
+      min-width: 300px;
+      background: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px var(--shadow);
+      border: 1px solid var(--border);
+    }
+
+    #cart-section h2 {
+      color: #3498db;
+    }
+
+    #cart-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0;
+    }
+
+    #cart-list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+
+    #cart-list button {
+      background: #e74c3c;
+      color: white;
+      border: none;
+      padding: 0.3rem 0.6rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    input, button[type="submit"] {
+      width: 100%;
+      padding: 0.75rem;
+      margin: 0.4rem 0;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      font-size: 1rem;
+    }
+
+    button[type="submit"] {
+      background: var(--accent);
+      color: white;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button[type="submit"]:hover {
+      background: #27ae60;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ShopAda - Weird & Wonderful Deals</h1>
+    <nav>
+  <button onclick="showSection('products')">🛒 Shop</button>
+  <button onclick="showSection('about')">📖 About</button>
+</nav>
+
+  </header>
+
+  <main>
+    <section id="products">
+  <div class="category">
+    <h3>🏰 Disney Treasures</h3>
+    <div class="item" onclick="addToCart('Magic Carpet Ride', 999999)">
+      <span>Magic Carpet Ride - ₱999,999</span>
+    </div>
+    <div class="item" onclick="addToCart('Ariel’s Seashell Phone', 1500)">
+      <span>Ariel’s Seashell Phone - ₱1,500</span>
+    </div>
+    <div class="item" onclick="addToCart('Cinderella’s Lost Slipper', 25000)">
+      <span>Cinderella’s Lost Slipper - ₱25,000</span>
+    </div>
+    <div class="item" onclick="addToCart('Beast’s Enchanted Rose', 88888)">
+      <span>Beast’s Enchanted Rose - ₱88,888</span>
+    </div>
+    <div class="item" onclick="addToCart('Frozen Snowflake in a Jar', 999)">
+      <span>Frozen Snowflake in a Jar - ₱999</span>
+    </div>
+  </div>
+
+  <div class="category">
+    <h3>🧙 Wizarding World Wonders</h3>
+    <div class="item" onclick="addToCart('Elder Wand', 1000000)">
+      <span>Elder Wand - ₱1,000,000</span>
+    </div>
+    <div class="item" onclick="addToCart('Marauder’s Map', 50000)">
+      <span>Marauder’s Map - ₱50,000</span>
+    </div>
+    <div class="item" onclick="addToCart('Invisibility Cloak', 750000)">
+      <span>Invisibility Cloak  - ₱750,000</span>
+    </div>
+    <div class="item" onclick="addToCart('Golden Snitch', 3000)">
+      <span>Golden Snitch - ₱3,000</span>
+    </div>
+    <div class="item" onclick="addToCart('Butterbeer Mug', 450)">
+      <span>Butterbeer Mug - ₱450</span>
+    </div>
+  </div>
+
+  <div class="category">
+    <h3>🦸 Marvel Must-Haves</h3>
+    <div class="item" onclick="addToCart('Iron Man Arc Reactor', 200000)">
+      <span>Iron Man Arc Reactor - ₱200,000</span>
+    </div>
+    <div class="item" onclick="addToCart('Thor’s Hammer', 120000)">
+      <span>Thor’s Hammer  - ₱120,000</span>
+    </div>
+    <div class="item" onclick="addToCart('Captain America’s Shield', 99999)">
+      <span>Captain America’s Shield - ₱99,999</span>
+    </div>
+    <div class="item" onclick="addToCart('Ant-Man’s Shrunken Pizza', 150)">
+      <span>Ant-Man’s Shrunken Pizza - ₱150</span>
+    </div>
+    <div class="item" onclick="addToCart('Hulk’s Torn Pants', 75)">
+      <span>Hulk’s Torn Pants - ₱75</span>
+    </div>
+  </div>
+
+  <div class="category">
+    <h3>⚔️ Galactic Star Wars Gear</h3>
+    <div class="item" onclick="addToCart('Lightsaber', 500000)">
+      <span>Lightsaber - ₱500,000</span>
+    </div>
+    <div class="item" onclick="addToCart('Baby Yoda Plush', 3000)">
+      <span>Baby Yoda Plush - ₱3,000</span>
+    </div>
+    <div class="item" onclick="addToCart('Stormtrooper Helmet', 4000)">
+      <span>Stormtrooper Helmet - ₱4,000</span>
+    </div>
+    <div class="item" onclick="addToCart('Death Star Blueprint ', 15000)">
+      <span>Death Star Blueprint - ₱15,000</span>
+    </div>
+    <div class="item" onclick="addToCart('Jar Jar Binks Autograph', 999)">
+      <span>Jar Jar Binks Autograph - ₱999</span>
+    </div>
+  </div>
+
+  <div class="category">
+    <h3>💄 Barbie Boutique</h3>
+    <div class="item" onclick="addToCart('Barbie Dreamhouse (Mini)', 50000)">
+      <span>Barbie Dreamhouse (Mini) - ₱50,000</span>
+    </div>
+    <div class="item" onclick="addToCart('Ken’s Sunglasses', 899)">
+      <span>Ken’s Sunglasses - ₱899</span>
+    </div>
+    <div class="item" onclick="addToCart('Roller Skates from the Movie', 3000)">
+      <span>Roller Skates from the Movie - ₱3,000</span>
+    </div>
+    <div class="item" onclick="addToCart('Pink Convertible (Hot Wheels Size)', 2500)">
+      <span>Pink Convertible (Hot Wheels Size) - ₱2,500</span>
+    </div>
+    <div class="item" onclick="addToCart('Barbie’s Hairbrush ', 150)">
+      <span>Barbie’s Hairbrush - ₱150</span>
+    </div>
+  </div>
+</section>
+
+<aside id="cart-section">
+      <h2>🛒 Your Cart</h2>
+      <ul id="cart-list"></ul>
+      <p><strong>Total:</strong> ₱<span id="cart-total">0</span></p>
+
+      <form id="checkout-form" method="POST" action="http://47.129.9.35/cs3/checkout.php">
+        <input type="text" name="cust_name" placeholder="Your Name" required>
+        <input type="email" name="cust_email" placeholder="Your Email" required>
+        <input type="text" name="cust_addr" placeholder="Delivery Address" required>
+        <input type="hidden" name="cust_order" id="cust_order_field">
+        <button type="submit">Checkout</button>
+      </form>
+    </aside>
+
+   <section id="about-section" style="display: none; background-color: #f5f5f5; height: 100vh; display: flex; justify-content: center; align-items: center;">
+  <div style="background-color: white; border-radius: 20px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); padding: 3rem; width: 100%; max-width: 2000px;">
+    <h2 style="font-family: 'Poppins', sans-serif; font-size: 2.5rem; color: #8e44ad; text-align: center; margin-bottom: 2rem;">
+      ✨ About This Project
+    </h2>
+
+    <div style="text-align: center; margin-bottom: 2rem;">
+        <img src="https://media.tenor.com/RSwevE15Y6cAAAAM/hi-winnie-the-pooh.gif" alt="Pooh" style="max-width: 150px; display: block; margin: 0 auto 2rem auto;">    
+    </div>
+
+    <h3 style="font-size: 1.8rem; color: #6c3483; margin-bottom: 1.5rem; border-bottom: 2px solid #e0e0e0; padding-bottom: 0.5rem;">
+      👥 Team Members
+    </h3>
+    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+      <div style="background: #fafafa; border: 1px solid #e0e0e0; border-radius: 16px; padding: 1.5rem;">
+        <h4 style="margin: 0; font-size: 1.3rem; color: #4a148c;">1. Joaquin Paulo Tioleco – Lead Coder</h4>
+        <p style="margin-top: 0.5rem; color: #555;">Joaquin led the coding, making sure everything runs smoothly and functions as expected.</p>
+      </div>
+  
+      <div style="background: #fafafa; border: 1px solid #e0e0e0; border-radius: 16px; padding: 1.5rem;">
+        <h4 style="margin: 0; font-size: 1.3rem; color: #4a148c;">2. Shandrah Dane Agbayani – Side Coder & Stylist</h4>
+        <p style="margin-top: 0.5rem; color: #555;">Shandrah helped with extra coding and made sure the design was clean and easy to use.</p>
+      </div>
+  
+      <div style="background: #fafafa; border: 1px solid #e0e0e0; border-radius: 16px; padding: 1.5rem;">
+        <h4 style="margin: 0; font-size: 1.3rem; color: #4a148c;">3. Xyrel Magsino – Side Coder & Stylist</h4>
+        <p style="margin-top: 0.5rem; color: #555;">Xyrel worked on fine-tuning the design and ensured everything looked polished and functional.</p>
+      </div>
+    </div>
+
+    <h3 style="font-size: 1.8rem; color: #6c3483; margin-top: 2.5rem; margin-bottom: 1rem; border-bottom: 2px solid #e0e0e0; padding-bottom: 0.5rem;">
+      📚 References
+    </h3>
+    <ul style="color: #555; line-height: 1.8; padding-left: 1.2rem;">
+      <li><a href="https://getbootstrap.com" target="_blank" style="color: #8e44ad; text-decoration: none;">Bootstrap Documentation</a></li>
+      <li><a href="https://www.w3schools.com/css/" target="_blank" style="color: #8e44ad; text-decoration: none;">W3Schools - CSS Styling</a></li>
+      <li><a href="https://www.w3schools.com/js/" target="_blank" style="color: #8e44ad; text-decoration: none;">W3Schools - JavaScript</a></li>
+    </ul>
+
+    <h3 style="font-size: 1.8rem; color: #6c3483; margin-top: 2.5rem; margin-bottom: 1rem; border-bottom: 2px solid #e0e0e0; padding-bottom: 0.5rem;">
+        🌟 Our Mission
+      </h3>
+      <p style="color: #555; line-height: 1.8; font-size: 1.1rem;">
+        At <strong>ShopAda</strong>, we believe that life is too short to shop for boring things. Born from a shared love for fantasy, fiction, and the utterly ridiculous, ShopAda is your ultimate destination for the weirdest, most magical products you never knew you needed. From enchanted relics and Marvel memorabilia to Barbie accessories with flair, we celebrate imagination, fandom, and fun!
+      </p>
+  
+      <h3 style="font-size: 1.8rem; color: #6c3483; margin-top: 2.5rem; margin-bottom: 1rem; border-bottom: 2px solid #e0e0e0; padding-bottom: 0.5rem;">
+        🚀 How It All Started
+      </h3>
+      <p style="color: #555; line-height: 1.8; font-size: 1.1rem;">
+        It all started as a school project — but quickly evolved into a passion for creating something beyond ordinary. Joaquin, Shandrah, and Xyrel joined forces, combining code, creativity, and a whole lot of pink sparkles to bring you a shopping experience unlike any other.
+      </p>
+  
+      <h3 style="font-size: 1.8rem; color: #6c3483; margin-top: 2.5rem; margin-bottom: 1rem; border-bottom: 2px solid #e0e0e0; padding-bottom: 0.5rem;">
+        🎉 Why Shop With Us?
+      </h3>
+      <ul style="color: #555; line-height: 1.8; font-size: 1.1rem; padding-left: 1.2rem;">
+        <li>✨ One-of-a-kind fantasy items</li>
+        <li>🛍️ Smooth and magical shopping experience</li>
+        <li>💡 Coded and crafted with heart by passionate students</li>
+        <li>💜 100% Imagination-Approved™</li>
+      </ul>
+  </div>
+</section>
+
+      
+      
+      
+  </main>
+
+  <script>
+
+function showSection(section) {
+  document.getElementById('products').style.display = 'none';
+  document.getElementById('about-section').style.display = 'none';
+  document.getElementById('cart-section').style.display = 'none'; 
+
+  if (section === 'products') {
+    document.getElementById('products').style.display = 'block';
+    document.getElementById('cart-section').style.display = 'block'; 
+  } else if (section === 'about') {
+    document.getElementById('about-section').style.display = 'block';
+  }
+}
+  showSection('products');
+
+    const cart = [];
+
+    function addToCart(prod_name, prod_price) {
+      cart.push({ prod_name, prod_price });
+      updateCart();
+    }
+
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      updateCart();
+    }
+
+    function updateCart() {
+      const list = document.getElementById("cart-list");
+      const totalDisplay = document.getElementById("cart-total");
+      list.innerHTML = "";
+
+      let total = 0;
+      cart.forEach((item, index) => {
+        total += item.prod_price;
+        const li = document.createElement("li");
+        li.textContent = `${item.prod_name} - ₱${item.prod_price}`;
+        const removeBtn = document.createElement("button");
+        removeBtn.textContent = "Remove";
+        removeBtn.onclick = () => removeFromCart(index);
+        li.appendChild(removeBtn);
+        list.appendChild(li);
+      });
+
+      totalDisplay.textContent = total;
+    }
+
+    document.getElementById("checkout-form").addEventListener("submit", function () {
+      document.getElementById("cust_order_field").value = JSON.stringify(cart);
+    });
+
+  </script>
+</body>
+</html>
